@@ -1,0 +1,118 @@
+{
+  "name": "formily-demo2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@formily/antd": "^2.0.8",
+    "@formily/core": "^2.0.8",
+    "@formily/react": "^2.0.8",
+    "@mi/cloud-fetch": "^0.4.0",
+    "@mi/fusion-sentry-init": "2.0.4",
+    "@mi/fusion-utils": "^2.1.5",
+    "antd": "^4.12.3",
+    "axios": "0.19.0",
+    "dva": "2.4.1",
+    "dva-loading": "3.0.22",
+    "dva-nprogress": "0.0.4",
+    "graphql": "^14.2.0",
+    "lodash": "^4.17.10",
+    "moment": "^2.19.2",
+    "nprogress": "0.2.0",
+    "query-string": "^6.9.0",
+    "react": "^17.0.1",
+    "react-app-polyfill": "^0.2.0",
+    "react-dev-utils": "^7.0.1",
+    "react-dom": "^17.0.1",
+    "react-ga": "^2.5.3",
+    "react-redux": "5.1.2",
+    "react-router-dom": "4.3.1",
+    "resolve": "1.8.1",
+    "web-vitals": "^2.1.3"
+  },
+  "scripts": {
+    "start": "fusion-runner start",
+    "build:prod": "fusion-runner build",
+    "build:dev": "fusion-runner build",
+    "build:dev:online": "node --max-old-space-size=8192 scripts/build.js dev /cache/dev",
+    "build:prod:online": "node --max-old-space-size=8192 scripts/build.js prod /cache/prod",
+    "test": "node scripts/test.js",
+    "build": "npm run build:prod",
+    "lint-fix": "eslint --fix --ext .js,.ts,.jsx,.tsx src",
+    "postinstall": "patch-package",
+    "prettier": "prettier --write ."
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint --cache --cache-location=./node_modules/.cache/.eslintcache --ext .jsx,.js,.ts,.tsx"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "micra-track push"
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 10",
+    "not op_mini all"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts"
+    ],
+    "resolver": "jest-pnp-resolver",
+    "setupFiles": [
+      "react-app-polyfill/jsdom"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+    ],
+    "testEnvironment": "jsdom",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web",
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+    },
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "web.ts",
+      "ts",
+      "web.tsx",
+      "tsx",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ]
+  },
+  "devDependencies": {
+    "@mi/eslint-config-cloudfe-react-ts": "^0.1.0",
+    "@mi/fusion-runner": "^0.0.1-alpha.29",
+    "@mi/micra-track": "^0.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "husky": "^3.0.4",
+    "patch-package": "^6.4.7"
+  },
+  "description": "```` ├── README.md ├── config  // 相关配置文件 │   ├── antdConfig.js │   ├── env.js │   ├── jest // 测试 │   ├── paths.js // 各种打包需要用到的路径 │   ├── webpack.config.js // build配置 │   └── webpackDevServer.config.js // start配置 ├── dist // 打包的output ├── public // html模板 ├── scripts // npm命令调用的脚本 └── src     ├── assets     │   ├── common // 全局通用的css     │   ├── configs      │   └── vendor // SDK等     ├── components // 全局使用的组件     ├── index.js // 入口JS     ├── index.scss      ├── media.scss // 媒体查询的breakpoint定义     ├── model.js // 顶级model     ├── registerServiceWorker.js     ├── router.js // 入口路由配置     ├── scenes // 业务代码，一个scene即为一个服务     ├── sentryInit.js 错误上报的初始化     ├── services // 业务中需要用到的http请求     │   ├── base.js     │   ├── deeepLearning.js     │   ├── deroraManage.js     └── utils         ├── dynamic.js // JS动态加载的工具方法         ├── introduceList.js // 产品介绍相关数据         ├── productsApplyStatus.js // 服务在不同区域的可用性         ├── region.js // region相关方法         ├── registerModel.js // 注册路由         ├── request.js // 封装的fetch         ├── serviceLinkList.js // 各个服务名与服务链接的映射关系         └── serviceList.js // 将服务按大类划分后的数据结构 ````",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git@v9.git.n.xiaomi.com:Eco_FE/fusion-ui.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,16 @@
+{
+  "type": "void",
+  "$schema": "https://staging-cnbj2-fds.api.xiaomi.net/mcfe--fusion-ui-formily-component/static/schema.json",
+  "properties": {
+    "node": {
+      "type": "string",
+      "x-component": "CuiProject",
+      "x-decorator": "FormItem",
+      "title": "项目选择",
+      "x-component-props": {
+        "mode": "local",
+        "folderSelectable": true
+      }
+    }
+  }
+}

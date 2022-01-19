@@ -1,0 +1,5 @@
+include:
+  - project: 'Eco_FE/base-configuration-files'
+    file: '/gitlab/gitlab-ci-next.yml'
+deploy_production:
+  approval: false

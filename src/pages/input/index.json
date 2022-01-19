@@ -1,0 +1,34 @@
+{
+  "type": "void",
+  "$schema": "https://staging-cnbj2-fds.api.xiaomi.net/mcfe--fusion-ui-formily-component/static/schema.json",
+  "properties": {
+    "username": {
+      "type": "string",
+      "x-component": "CustomInput",
+      "x-decorator": "FormItem",
+      "title": "自定义的Input",
+      "default": "张三",
+      "x-component-props": {
+        "label": "demo",
+        "type": "primary",
+        "style": {
+          "width": "200px"
+        }
+      }
+    },
+    "age": {
+      "type": "string",
+      "x-component": "Input",
+      "x-decorator": "FormItem",
+      "title": "内置Input",
+      "default": "23",
+      "x-component-props": {
+        "label": "demo",
+        "type": "primary",
+        "style": {
+          "width": "200px"
+        }
+      }
+    }
+  }
+}

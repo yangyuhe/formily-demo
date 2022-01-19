@@ -1,0 +1,7 @@
+/config
+/node_modules
+/public
+/scripts
+/src/assets
+eslintPath.js
+deploy.config.js

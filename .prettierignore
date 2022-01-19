@@ -1,0 +1,13 @@
+/build
+/dist
+/node_modules
+/src/assets
+**/*/lib
+eslintPath.js
+.cache
+.temp
+yarn.lock
+package-lock.json
+*.yml
+*.ymal
+*.sh

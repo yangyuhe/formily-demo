@@ -1,0 +1,15 @@
+{
+  "type": "void",
+  "$schema": "https://staging-cnbj2-fds.api.xiaomi.net/mcfe--fusion-ui-formily-component/static/schema.json",
+  "properties": {
+    "button": {
+      "type": "void",
+      "x-component": "Button",
+      "x-component-props": {
+        "label": "demo",
+        "type": "primary",
+        "onClick": "{{click}}"
+      }
+    }
+  }
+}
